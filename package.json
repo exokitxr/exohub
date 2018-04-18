@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/modulesio/exohub/issues"
   },
-  "homepage": "https://github.com/modulesio/exohub#readme"
+  "homepage": "https://github.com/modulesio/exohub#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }

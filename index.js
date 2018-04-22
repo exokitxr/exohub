@@ -2,15 +2,16 @@ const http = require('http');
 const https = require('https');
 const express = require('express');
 
-// const URL = `https://www.reddit.com/r/exokit.json`;
+const URL = `https://www.reddit.com/r/exokit.json`;
 
 const _parseLinks = j => j.data.children.map(child => child.data.url);
 let links = null;
 
 const _fetchLinks = () => {
+  const {hostname, path} = url.parse(URL);
   const req = https.get({
-    hostname: 'www.reddit.com',
-    path: '/r/exokit.json',
+    hostname,
+    path,
     encoding: 'utf8',
   }, res => {
     const bs = [];

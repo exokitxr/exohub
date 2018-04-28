@@ -26,11 +26,11 @@ const _fetchLinks = () => {
       links = _parseLinks(j);
     });
     res.on('error', err => {
-      throw err;
+      console.warn(err.stack);
     });
   });
   req.on('error', err => {
-    throw err;
+    console.warn(err.stack);
   });
 };
 _fetchLinks();

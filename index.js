@@ -38,6 +38,11 @@ setInterval(_fetchLinks, 10 * 1000);
 
 const app = express();
 app.get('*', (req, res, next) => {
+  res.set('Access-Control-Allow-Origin', '*');
+  res.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.set('Access-Control-Allow-Credentials', 'true');
+
   res.json(links);
 });
 http.createServer(app)

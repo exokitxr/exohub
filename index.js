@@ -6,7 +6,7 @@ const express = require('express');
 const URL = `https://www.reddit.com/r/exokit.json`;
 
 const _parseLinks = j => j.data.children.map(child => child.data.url);
-let links = null;
+let links = [];
 
 const _fetchLinks = () => {
   const {hostname, path} = url.parse(URL);
